@@ -20,3 +20,8 @@ Route::auth();
 Route::get('/home', 'HomeController@index');
 
 Route::get('/post/all', 'BlogPostController@all');
+
+Route::get('/post/create', ['as' => 'blogpost.create', 'uses' => 'BlogPostController@create']);
+Route::post('/post/create', ['as' => 'blogpost.store', 'uses' => 'BlogPostController@store']);
+
+Route::get('/post/edit/{post}', ['as' => 'blogpost.update', 'uses' => 'BlogpostController@edit']);
